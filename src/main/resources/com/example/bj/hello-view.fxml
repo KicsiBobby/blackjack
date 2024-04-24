@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <VBox prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bj.HelloController">
    <children>
@@ -23,7 +26,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <HBox prefWidth="0.0">
+            <HBox prefHeight="216.0" prefWidth="741.0">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" translateX="500.0" translateY="400.0">
                      <image>
@@ -39,16 +42,16 @@
             </HBox>
          </children>
       </StackPane>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox fx:id="btExit" prefHeight="155.0" prefWidth="1200.0" style="-fx-background-color: grey;">
          <children>
             <VBox>
                <children>
-                  <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="onClick100" fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@100.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="onClick50" fitHeight="72.0" fitWidth="72.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@50.png" />
                      </image>
@@ -57,18 +60,74 @@
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0">
                <children>
-                  <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="onClick25" fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@25.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="onClick5" fitHeight="72.0" fitWidth="72.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@5.png" />
                      </image>
                   </ImageView>
                </children>
             </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <TextField fx:id="tfDeposit" promptText="Deposit amount" />
+                        <Button fx:id="btDeposit" mnemonicParsing="false" prefWidth="75.0" text="Deposit">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </HBox>
+                  <Button fx:id="btHit" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="75.0" text="Hit" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="btStand" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="75.0" text="Stand" />
+                  <HBox>
+                     <children>
+                        <Label text="Balance: ">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbBalance" text="0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Button mnemonicParsing="false" prefWidth="75.0" text="Bet" />
+                        <Label fx:id="lbBet" text="0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+            <TextField fx:id="tfJoin" promptText="Szerver ip" translateX="570.0" translateY="5.0" />
+            <Button fx:id="btJoin" mnemonicParsing="false" onAction="#onJoinClick" text="Csatlakozás" translateX="580.0" translateY="5.0" />
+            <Button mnemonicParsing="false" onAction="#onExitClick" style="-fx-background-color: red;" text="Exit" translateX="550.0" translateY="110.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
          </children></HBox>
    </children>
 </VBox>
